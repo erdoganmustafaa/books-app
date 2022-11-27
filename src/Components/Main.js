@@ -7,8 +7,9 @@ const Main = () => {
     const [bookData,setBookData] = useState([]);
     const searchBook = (evt)=>{
         if(evt.key==="Enter"){
-            axios.get("https://www.googleapis.com/books/v1/volumes?q="+search+"&key=AIzaSyC1MNvxdlJwXvMJo2bokx2Rjvinvw9ONp8"+"&maxResults=20")
+            axios("https://www.googleapis.com/books/v1/volumes?q="+search+"&key=AIzaSyC1MNvxdlJwXvMJo2bokx2Rjvinvw9ONp8&maxResults=20")
             .then(res=>setBookData(res.data.items)).catch(err=>console.log(err))
+            
         }
     }
 
